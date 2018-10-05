@@ -20,6 +20,7 @@
 ///   override class var predicate: Predicate? { return .type({ $0 is YourCustomFrameworkBase.Type }) }
 /// }
 /// ```
+@available(*, deprecated, message: "This is an old very slow and unsafe functionality")
 open class DIScanFramework: DIScan, DIFramework {
   /// Variants of the predicate on the basis of which these frameworks will be included.
   ///

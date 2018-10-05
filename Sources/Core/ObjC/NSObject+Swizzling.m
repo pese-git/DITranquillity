@@ -11,13 +11,11 @@
 
 @implementation NSObject (Swizzling)
 
-+ (void)swizzleInstanceOriginalSelector:(SEL)originalSelector swizzledSelector:(SEL)swizzledSelector
-{
++ (void)swizzleInstanceOriginalSelector:(SEL)originalSelector swizzledSelector:(SEL)swizzledSelector {
   [self swizzleOriginalSelector:originalSelector swizzledSelector:swizzledSelector isClass:NO];
 }
 
-+ (void)swizzleClassOriginalSelector:(SEL)originalSelector swizzledSelector:(SEL)swizzledSelector
-{
++ (void)swizzleClassOriginalSelector:(SEL)originalSelector swizzledSelector:(SEL)swizzledSelector {
   [self swizzleOriginalSelector:originalSelector swizzledSelector:swizzledSelector isClass:YES];
 }
 

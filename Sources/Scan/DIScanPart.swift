@@ -23,6 +23,7 @@
 ///   override class var bundle: Bundle? { return Bundle(for: YourClass.self) }
 /// }
 /// ```
+@available(*, deprecated, message: "This is an old very slow and unsafe functionality")
 open class DIScanPart: DIScan, DIPart {
   /// Variants of the predicate on the basis of which these parts will be included.
   ///

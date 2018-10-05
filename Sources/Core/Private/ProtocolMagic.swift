@@ -142,10 +142,20 @@ extension DIMany: OptionalMake {
 
 func gmake<T>(by obj: Any?) -> T {
   if let opt = T.self as? OptionalMake.Type {
-    return opt.make(by: obj) as! T // it's always valid
+    guard let typedObject = opt.make(by: obj) as? T else { // it's always valid
+      fatalError("Can't cast \(type(of: obj)) to optional \(T.self). For more information see logs.")
+    }
+    return typedObject
   }
-  
-  return obj as! T // can crash, but it's normally
+
+  guard let typedObject = obj as? T else { // can crash, but it's normally
+    if nil == obj {
+      fatalError("Can't resolve type \(T.self). For more information see logs.")
+    } else {
+      fatalError("Can't cast \(type(of: obj)) to \(T.self). For more information see logs.")
+    }
+  }
+  return typedObject
 }
 
 ////// For simple log
