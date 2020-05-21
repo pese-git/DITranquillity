@@ -3,7 +3,7 @@ import PackageDescription
 
 let package = Package(
     name: "DITranquillity",
-    products: [.library(name: "DITranquillity", targets: ["DITranquillity"])
+    products: [.library(name: "DITranquillity", type: .dynamic, targets: ["DITranquillity"])
     ],
     dependencies: [
         .package(url: "https://github.com/ivlevAstef/SwiftLazy.git", from: "1.1.2")
